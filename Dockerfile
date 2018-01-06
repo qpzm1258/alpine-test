@@ -11,7 +11,7 @@ ENV RAW_VERSION 20171125.0
 
 
 RUN apk upgrade --update \
-    && apk add bash tzdata openssh\
+    && apk add bash tzdata openssh nano \
     && ln -sf /usr/share/zoneinfo/${TZ} /etc/localtime \
     && echo ${TZ} > /etc/timezone \
     && sed -i s/#PermitRootLogin.*/PermitRootLogin\ yes/ /etc/ssh/sshd_config \
